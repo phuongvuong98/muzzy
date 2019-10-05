@@ -1,7 +1,7 @@
 {
-  "name": "TheBusinessWeb",
+  "name": "MuzzyWeb",
   "version": "1.0.0",
-  "description": "The business web - combile NodeJS and MongoDB",
+  "description": "The muzzy web - combile NodeJS and MongoDB",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
