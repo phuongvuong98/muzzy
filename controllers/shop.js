@@ -1,15 +1,16 @@
 const Product = require("../models/product");
+const Coffee = require("../models/coffee");
 const User = require("../models/user");
-exports.getProducts = (req, res, next) => {
-  Product.find()
-    .then(products => {
-      products = products.filter(p => p.delete_at == undefined);
-      console.log(products);
-      return res.render("shop/products", {
-        products: products,
+exports.getCoffees = (req, res, next) => {
+  Coffee.find()
+    .then(coffees => {
+      coffees = coffees.filter(p => p.delete_at == undefined);
+      console.log(coffees);
+      return res.render("shop/coffees", {
+        coffees: coffees,
         userr: req.user,
-        pageTitle: "All Products",
-        path: "/products",
+        pageTitle: "Acoustic Coffee",
+        path: "/coffees",
         kind: "all",
         kindFilter: []
       });
@@ -19,20 +20,20 @@ exports.getProducts = (req, res, next) => {
     });
 };
 
-exports.getProduct = (req, res, next) => {
-  const productId = req.params.productId;
-  console.log("[GET DETAILED PRODUCT]:", productId);
+exports.getCoffee = (req, res, next) => {
+  const coffeeId = req.params.coffeeId;
+  console.log("[GET DETAILED coffee]:", coffeeId);
   User.find()
     .then(users => {
-      Product.find().then(products => {
-        Product.findById(productId)
-          .then(product => {
-            console.log("Get product sucessfully");
-            res.render("shop/product-detail", {
-              product: product,
-              products: products,
-              pageTitle: product.title,
-              path: "/products",
+      Coffee.find().then(coffees => {
+        Coffee.findById(coffeeId)
+          .then(coffee => {
+            console.log("Get coffee sucessfully");
+            res.render("shop/coffee-detail", {
+              coffee: coffee,
+              coffees: coffees,
+              pageTitle: coffee.title,
+              path: "/coffees",
               users: users,
               userr: req.user
             });
@@ -48,13 +49,13 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-  Product.find()
-    .then(products => {
+  Coffee.find()
+    .then(coffees => {
       //console.log(products);
-      products = products.filter(p => p.delete_at == undefined);
+      coffees = coffees.filter(p => p.delete_at == undefined);
       // console.log(products);
       return res.render("shop/index", {
-        products: products,
+        coffees: coffees,
         userr: req.user,
         pageTitle: "Muzzy",
         path: "/",

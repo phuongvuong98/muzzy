@@ -358,7 +358,7 @@ MESSAGE */
 .main-menu>li>a {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
-  color: #333;
+  color: #b2b2b2;
   padding: 5px 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -367,7 +367,7 @@ MESSAGE */
 }
 
 .header-v3 .main-menu>li>a {
-  color: #fff;
+  color: #b2b2b2;
 }
 
 /*---------------------------------------------*/
@@ -610,7 +610,8 @@ MESSAGE */
 
 .fix-menu-desktop .wrap-menu-desktop {
   height: 70px;
-  background-color: rgba(255, 255, 255, 1);
+  /* background-color: rgba(255, 255, 255, 1); */
+  background-color: #4e4e4ea4;
   box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);

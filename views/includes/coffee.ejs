@@ -1,0 +1,69 @@
+<!-- coffee -->
+<section class="bg0 p-t-23 p-b-140">
+    <div class="container">
+        <div class="p-b-10">
+            <h3 class="ltext-103 cl5">
+                <div class="translate">Acoustic Coffee</div>
+            </h3>
+        </div>
+
+        <%
+				if (!(kindFilter[0] == '')) {
+			%>
+        <div class="flex-w flex-c-m m-tb-10">
+            <% 
+				kindFilter.forEach(item => { 
+				%>
+            <div class="flex-c-m stext-106 cl6 size-104 bor4 hov-btn3 trans-04 m-r-8 m-tb-4">
+                <div class="translate"><%= item %>&nbsp;&nbsp;</div>
+                <form action="/<%= kind %>" method="post">
+                    <button type="submit" class="filter-link stext-106 trans-04 translate">
+                        <i class="icon-close-filter cl2 m-r-6 fs-20 trans-04 zmdi zmdi-close"></i>
+                    </button>
+                    <input type="hidden" name="kindFilterEdit" value="<%= item %>">
+                    <input type="hidden" name="kindFilter" value="<%= kindFilter %>">
+                </form>
+            </div>
+            <% }); %>
+        </div>
+        <% } %>
+
+        <div class="row isotope-grid">
+            <% if (coffees.length > 0) { %>
+            <% for (let coffee of coffees) { %>
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%= coffee.category %>">
+                <div class="block2">
+                    <div class="block2-pic hov-img0">
+                        <img src="<%= coffee.imgCover %>" alt="IMG-coffee">
+
+                        <a href="#" onclick="showdata('<%= coffee.name %>', '<%= coffee.price %>','<%= coffee.description %>',
+											'<%= coffee.imgCover %>', '<%= coffee._id %>')"
+                            class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                            Chơi ngay
+                        </a>
+                    </div>
+
+                    <div class="block2-txt flex-w flex-t p-t-14">
+                        <div class="block2-txt-child1 flex-col-l ">
+                            <a href="/coffees/<%= coffee._id %>"
+                                class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <%= coffee.name %>
+                            </a>
+
+                            <!-- <span class="stext-105 cl3">
+								$<%= coffee.price %>
+							</!-->
+                        </div>
+
+                        <div class="block2-txt-child2 flex-r p-t-3">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <% } %>
+            <% } %>
+        </div>
+    </div>
+</section>
