@@ -12,7 +12,11 @@ router.get("/", shopController.getIndex);
 
 router.get("/coffees", shopController.getCoffees);
 
+router.get("/teachers", shopController.getTeachers);
+
 router.get("/coffees/:coffeeId", shopController.getCoffee);
+
+router.get("/teachers/:teacherId", shopController.getTeacher);
 
 router.get("/cart", isAuth, shopController.getCart);
 

@@ -1,9 +1,9 @@
-<!-- coffee -->
-<section class="bg0 p-t-23 p-b-80">
+<!-- teacher -->
+<section class="bg0 p-t-23 p-b-140">
     <div class="container">
         <div class="p-b-10">
             <h3 class="ltext-103 cl5">
-                <div class="translate">Acoustic Coffee</div>
+                <div>Người hướng dẫn</div>
             </h3>
         </div>
 
@@ -29,15 +29,15 @@
         <% } %>
 
         <div class="row isotope-grid">
-            <% if (coffees.length > 0) { %>
-            <% for (let coffee of coffees) { %>
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%= coffee.category %>">
+            <% if (teachers.length > 0) { %>
+            <% for (let teacher of teachers) { %>
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%= teacher.category %>">
                 <div class="block2">
                     <div class="block2-pic hov-img0">
-                        <img src="<%= coffee.imgCover %>" alt="IMG-coffee">
+                        <img src="<%= teacher.imgCover %>" alt="IMG-teacher">
 
-                        <a href="#" onclick="showdata('<%= coffee.name %>', '<%= coffee.price %>','<%= coffee.description %>',
-											'<%= coffee.imgCover %>', '<%= coffee._id %>')"
+                        <a href="#" onclick="showdata('<%= teacher.name %>', '<%= teacher.price %>','<%= teacher.description %>',
+											'<%= teacher.imgCover %>', '<%= teacher._id %>')"
                             class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                             Chơi ngay
                         </a>
@@ -45,13 +45,13 @@
 
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
-                            <a href="/coffees/<%= coffee._id %>"
+                            <a href="/teachers/<%= teacher._id %>"
                                 class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                <%= coffee.name %>
+                                <%= teacher.name %>
                             </a>
 
                             <!-- <span class="stext-105 cl3">
-								$<%= coffee.price %>
+								$<%= teacher.price %>
 							</!-->
                         </div>
 

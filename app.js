@@ -106,8 +106,8 @@ app.use(errorController.get404);
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(result => {
-    console.log("CONNECTED in port 3000");
-    app.listen(process.env.PORT || 3000);
+    console.log("CONNECTED in port 8080");
+    app.listen(process.env.PORT || 8080);
   })
   .catch(err => {
     console.log(err);

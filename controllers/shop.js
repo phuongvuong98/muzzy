@@ -1,5 +1,6 @@
 const Product = require("../models/product");
 const Coffee = require("../models/coffee");
+const Teacher = require("../models/teacher");
 const User = require("../models/user");
 exports.getCoffees = (req, res, next) => {
   Coffee.find()
@@ -11,6 +12,25 @@ exports.getCoffees = (req, res, next) => {
         userr: req.user,
         pageTitle: "Acoustic Coffee",
         path: "/coffees",
+        kind: "all",
+        kindFilter: []
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.getTeachers = (req, res, next) => {
+  Teacher.find()
+    .then(teachers => {
+      teachers = teachers.filter(p => p.delete_at == undefined);
+      console.log(teachers);
+      return res.render("shop/teachers", {
+        teachers: teachers,
+        userr: req.user,
+        pageTitle: "Người hướng dẫn",
+        path: "/teachers",
         kind: "all",
         kindFilter: []
       });
@@ -48,21 +68,57 @@ exports.getCoffee = (req, res, next) => {
     });
 };
 
-exports.getIndex = (req, res, next) => {
-  Coffee.find()
-    .then(coffees => {
-      //console.log(products);
-      coffees = coffees.filter(p => p.delete_at == undefined);
-      // console.log(products);
-      return res.render("shop/index", {
-        coffees: coffees,
-        userr: req.user,
-        pageTitle: "Muzzy",
-        path: "/",
-        kind: "all",
-        kindFilter: []
+exports.getTeacher = (req, res, next) => {
+  const teacherId = req.params.teacherId;
+  console.log("[GET DETAILED teacher]:", teacherId);
+  User.find()
+    .then(users => {
+      Teacher.find().then(teachers => {
+        Teacher.findById(teacherId)
+          .then(teacher => {
+            console.log("Get teacher sucessfully");
+            res.render("shop/teacher-detail", {
+              teacher: teacher,
+              teachers: teachers,
+              pageTitle: teacher.title,
+              path: "/teachers",
+              users: users,
+              userr: req.user
+            });
+          })
+          .catch(err => {
+            console.log(err);
+          });
       });
     })
+    .catch(err => {
+      console.log(err);
+    });
+};
+
+exports.getIndex = (req, res, next) => {
+  Teacher.find()
+    .then(teachers => {
+      Coffee.find()
+        .then(coffees => {
+          //console.log(products);
+          coffees = coffees.filter(p => p.delete_at == undefined);
+          // console.log(products);
+          return res.render("shop/index", {
+            teachers: teachers,
+            coffees: coffees,
+            userr: req.user,
+            pageTitle: "Muzzy",
+            path: "/",
+            kind: "all",
+            kindFilter: []
+          });
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    })
+
     .catch(err => {
       console.log(err);
     });

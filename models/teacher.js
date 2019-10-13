@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const CoffeeSchema = new Schema({
+const TeacherSchema = new Schema({
   name: String,
   video: String,
   imgCover: {
@@ -40,4 +40,4 @@ const CoffeeSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model("Coffee", CoffeeSchema);
+module.exports = mongoose.model("Teacher", TeacherSchema);

@@ -358,7 +358,7 @@ MESSAGE */
 .main-menu>li>a {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
-  color: #b2b2b2;
+  color: #555;
   padding: 5px 0px;
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
@@ -2006,7 +2006,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .block1-name {
-  color: #333;
+  color: #777;
 }
 
 .block1-info {
@@ -2130,7 +2130,7 @@ input.num-product::-webkit-inner-spin-button {
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
 .cl0 {
-  color: #fff;
+  color: #555;
 }
 
 .cl1 {
