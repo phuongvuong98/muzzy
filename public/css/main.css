@@ -611,7 +611,7 @@ MESSAGE */
 .fix-menu-desktop .wrap-menu-desktop {
   height: 70px;
   /* background-color: rgba(255, 255, 255, 1); */
-  background-color: #4e4e4ea4;
+  background-color: rgba(231, 231, 231, 0.75);
   box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 0px 3px 0px rgba(0, 0, 0, 0.2);
@@ -2028,7 +2028,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .block1-txt:hover {
-  background-color: #E4A03E;
+  background-color: rgba(228, 159, 62, 0.8);
 }
 
 .block1-txt:hover .block1-txt-child2 {
@@ -2130,7 +2130,7 @@ input.num-product::-webkit-inner-spin-button {
     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
 ==================================================================*/
 .cl0 {
-  color: #555;
+  color: #fff;
 }
 
 .cl1 {
