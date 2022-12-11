@@ -24,7 +24,7 @@
     "csurf": "^1.10.0",
     "duplexer": "^0.1.1",
     "ejs": "^2.6.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.16.2",
     "gridfs-stream": "^1.1.1",
